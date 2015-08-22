@@ -1,0 +1,10 @@
+[ignore]
+.*/node_modules/react-dom/.*
+.*/node_modules/node-sass/.*
+.*/src/.*
+
+[include]
+
+[libs]
+
+[options]

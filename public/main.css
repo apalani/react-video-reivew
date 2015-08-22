@@ -1,0 +1,113 @@
+body {
+
+	font-family: Roboto, Arial;
+}
+
+.app {
+
+	background-color: lightblue;
+}
+
+.main-header {
+
+	background-color: lightcoral;
+	display: flex;
+}
+
+.main-nav {
+
+	background-color: #19469D;
+	flex: auto;
+	display: flex;
+}
+
+.main-nav > a {
+
+	padding: 1rem 1.5rem;
+}
+
+.logo {
+
+	background-color: #219161;
+	padding: 1rem 1.5rem;
+}
+
+.page {
+
+	background-color: white;
+}
+
+.orders {
+
+
+}
+
+.page-header {
+
+	background-color: lightsteelblue;
+	padding: 1rem 1.5rem 0;
+	margin-bottom: 1rem;
+}
+
+.page-header > h1 {
+
+	margin: 0;
+}
+
+.orders-table {
+
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+
+.orders-table th {
+
+	font-weight: 500;
+	text-align: left;
+	border-width: 0 0 1px 0;
+	border-color: transparent;
+	border-style: solid;
+}
+
+.orders-table th, .orders-table td {
+
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+}
+
+.sorted-by {
+
+	border-color: lightcoral !important;
+}
+
+.orders-table th:first-child,
+.orders-table td:first-child {
+
+	padding-left: 1.5rem;
+}
+
+.orders-table th:last-child,
+.orders-table td:last-child {
+
+	padding-right: 1.5rem;
+}
+
+a.status {
+
+	font-weight: 500;
+	display: inline-block;
+	padding: .5rem;
+	cursor: pointer;
+}
+
+.status:first-child {
+
+	padding-left: 0;
+}
+
+.selected {
+
+	color: orange;
+}
