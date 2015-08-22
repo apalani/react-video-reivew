@@ -1,4 +1,6 @@
+require('babel/polyfill');
 import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './components/app';
 
-React.render(<App />, document.querySelector('#anchor'));
+ReactDOM.render(<App />, document.querySelector('#anchor'));
