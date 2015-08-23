@@ -5,6 +5,12 @@ import Orders from './orders';
 
 
 class App extends React.Component {
+
+  //constructor(props){
+  //  super(props);
+  //  this.state = { i: 0};
+  //}
+
   render(){
 
     return (
@@ -16,6 +22,18 @@ class App extends React.Component {
       </div>
     );
   }
+
+  //componentDidMount(){
+  //  this.increment();
+  //}
+  //
+  //componentDidUpdate(){
+  //  setTimeout(this.increment.bind(this), 200);
+  //}
+  //
+  //increment(){
+  //  this.setState({i: this.state.i++});
+  //}
 }
 
 export default App;

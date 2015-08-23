@@ -12,6 +12,11 @@ class MainNav extends React.Component {
       </nav>
     );
   }
+
+  shouldComponentUpdate(){
+    //doesn't need to ever re-render
+    return false;
+  }
 }
 
 export default MainNav;

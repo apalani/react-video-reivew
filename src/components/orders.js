@@ -27,7 +27,6 @@ class Orders extends React.Component {
 
     super(props);
     this.onChange = this.onChange.bind(this);
-    //debugger;
     this.state = OrdersStore.getState();
   }
 
@@ -71,12 +70,12 @@ class Orders extends React.Component {
     let { orders } = this.state;
     if( selectedStatus !== 'all'){
       orders = orders.filter((order) => {
-        return order.orderStatus === selectedStatus;
+        return order.get('orderStatus') === selectedStatus;
       })
     }
 
     if( amountFilter ){
-      orders = orders.filter((order) => order.amount === parseFloat(amountFilter));
+      orders = orders.filter((order) => order.get('amount') === parseFloat(amountFilter));
     }
 
     //immutable list uses size instead of length
@@ -100,6 +99,10 @@ class Orders extends React.Component {
         <OrdersTable orders={orders} />
       </div>
     );
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    return this.state !== nextState;
   }
 }
 

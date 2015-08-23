@@ -20,6 +20,14 @@ class OrderRow extends React.Component {
       </tr>
     );
   }
+
+  shouldComponentUpdate(nextProps, nextState){
+    /*
+     * Since order is an immutable JS object, we can do a simple comparison
+     * rather than having to do an expensive deep comparison
+     */
+    return nextProps.order !== this.props.order;
+  }
 }
 
 export default OrderRow;
