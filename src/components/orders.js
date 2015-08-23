@@ -8,6 +8,19 @@ import OrdersStore from '../stores/orders_store';
 
 const STATUSES = ['all', 'open', 'shipped'];
 
+class TopCustomer extends React.Component {
+
+  render(){
+    let {topOrder} = this.props;
+    if(!topOrder) return null;
+
+    //immutable won't let you update the object itself (its immutable!), but it does return a new object
+    topOrder = topOrder.set('customer', topOrder.get('customer').split(' ')[0]);
+
+    return <div>Top customer: {topOrder.get('customer')}</div>;
+  }
+}
+
 class Orders extends React.Component {
 
   constructor(props){
@@ -66,6 +79,9 @@ class Orders extends React.Component {
       orders = orders.filter((order) => order.amount === parseFloat(amountFilter));
     }
 
+    //immutable list uses size instead of length
+    const topOrder = orders.size ? orders.get(0) : null;
+
     return (
       <div className='orders'>
         <h2>Hello world</h2>
@@ -80,6 +96,7 @@ class Orders extends React.Component {
               onChange={this.handleAmountFilterChange.bind(this)} />
           </form>
         </PageHeader>
+        <TopCustomer topOrder={topOrder} />
         <OrdersTable orders={orders} />
       </div>
     );

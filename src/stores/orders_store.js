@@ -1,14 +1,16 @@
 import alt from '../alt';
 import OrdersActions from '../actions/orders_actions';
+import immutableUtil from 'alt/utils/ImmutableUtil';
+import Immutable from 'immutable';
 
 class OrderStore {
   constructor() {
-    this.orders = [];
+    this.orders = Immutable.List();
     this.selectedStatus = 'all';
     this.amountFilter = null;
 
     this.bindListeners({
-      handleUpdateOrders: OrdersActions.UPDATE_ORDERS,
+      handleUpdateOrders: OrdersActions. UPDATE_ORDERS,
       handleFetchOrders: OrdersActions.FETCH_ORDERS,
       handleUpdateAmountFilter: OrdersActions.UPDATE_AMOUNT_FILTER,
       handleUpdateSelectedStatus: OrdersActions.UPDATE_SELECTED_STATUS
@@ -32,4 +34,4 @@ class OrderStore {
   }
 }
 
-export default alt.createStore(OrderStore);
+export default alt.createStore(immutableUtil(OrderStore));
