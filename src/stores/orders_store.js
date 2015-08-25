@@ -10,7 +10,7 @@ class OrderStore {
     this.amountFilter = null;
 
     this.bindListeners({
-      handleUpdateOrders: OrdersActions. UPDATE_ORDERS,
+      handleUpdateOrders: OrdersActions.UPDATE_ORDERS,
       handleFetchOrders: OrdersActions.FETCH_ORDERS,
       handleUpdateAmountFilter: OrdersActions.UPDATE_AMOUNT_FILTER,
       handleUpdateSelectedStatus: OrdersActions.UPDATE_SELECTED_STATUS
