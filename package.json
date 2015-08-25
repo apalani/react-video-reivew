@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "clear && ./node_modules/mocha/bin/mocha --compilers js:babel/register --reporter dot --recursive",
-    "build": "browserify src/main.js -t babelify --outfile public/bundle.js",
+    "build": "browserify src/client.js -t babelify --outfile public/bundle.js",
     "flow": "clear && babel src --out-dir build_flow --blacklist flow && flow build_flow",
     "serve": "./node_modules/babel/bin/babel-node.js server.js"
   },
@@ -14,8 +14,10 @@
   "dependencies": {
     "alt": "^0.17.1",
     "d3": "^3.5.6",
+    "ejs": "^2.3.3",
     "express": "^4.13.3",
     "immutable": "^3.7.4",
+    "iso": "^4.2.0",
     "moment": "^2.10.3",
     "numeral": "^1.5.3",
     "react": "0.14.0-beta1",
