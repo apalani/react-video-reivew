@@ -38,6 +38,8 @@ app.get('/sales.json', (req, res) => {
 app.get('/orders', (req, res, next) => {
   const orders = JSON.parse(fs.readFileSync(__dirname + '/data/orders.json'));
 
+  //by naming the property 'OrderStore',
+  //alt knows to map this data to our OrderStore's state
   res.locals.data = {
     OrderStore: {
       orders: orders,
@@ -51,10 +53,15 @@ app.get('/orders', (req, res, next) => {
 
 // Render UI with React Router & React
 app.use((req, res, next) => {
+
+  //console.log('Data:', res.locals.data);
+  //bootstraps our app with data we got from the above end point
   alt.bootstrap(JSON.stringify(res.locals.data || {}));
   let iso = new Iso();
+
   Router.run(routes, new Location(req.url), (error, props) => {
     const content = ReactDOMServer.renderToString(<Router {...props} />);
+    //console.log(content);
     iso.add(content, alt.flush());
     res.render('index.ejs', { html: iso.render() });
   })
