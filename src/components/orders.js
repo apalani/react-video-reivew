@@ -83,7 +83,6 @@ class Orders extends React.Component {
 
     return (
       <div className='orders'>
-        <h2>Hello world</h2>
         <PageHeader>
           <h1>Orders</h1>
           <nav className='status-nav'>{statuses}</nav>

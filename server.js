@@ -12,6 +12,16 @@ app.get('/orders.json', (req, res) => {
   res.sendFile(__dirname + '/data/orders.json');
 });
 
+app.get('/orders', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+app.get('/dashboard', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+
+
 const server = app.listen(8000, () => {
     const host = server.address().address;
     const port = server.address().port;

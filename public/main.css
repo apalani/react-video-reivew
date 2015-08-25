@@ -19,11 +19,20 @@ body {
 	background-color: #19469D;
 	flex: auto;
 	display: flex;
+	justify-content: flex-end;
 }
 
 .main-nav > a {
 
 	padding: 1rem 1.5rem;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.main-nav > a.active {
+
+	text-decoration: underline;
 }
 
 .logo {

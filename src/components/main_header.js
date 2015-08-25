@@ -11,11 +11,6 @@ class MainHeader extends React.Component {
       </div>
     )
   }
-
-  shouldComponentUpdate(){
-    //doesn't need to ever re-render
-    return false;
-  }
 }
 
 export default MainHeader;
